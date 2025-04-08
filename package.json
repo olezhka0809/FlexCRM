@@ -1,0 +1,24 @@
+{
+  "name": "flexcrm",
+  "version": "1.0.0",
+  "description": "FlexCRM este un sistem flexibil de gestionare a afacerilor, creat pentru companii mici și mijlocii. Alege șabloane personalizate pentru afaceri cu produse sau servicii, gestionează angajații, clienții și accesează statistici esențiale dintr-un singur loc.FlexCRM este un sistem flexibil de gestionare a afacerilor, creat pentru companii mici și mijlocii. Alege șabloane personalizate pentru afaceri cu produse sau servicii, gestionează angajații, clienții și accesează statistici esențiale dintr-un singur loc.",
+  "main": "index.html",
+  "scripts": {
+    "sass:watch": "sass --style=expanded --watch styles:dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olezhka0809/FlexCRM.git"
+  },
+  "author": "Garnautan Oleg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/olezhka0809/FlexCRM/issues"
+  },
+  "homepage": "https://github.com/olezhka0809/FlexCRM#readme",
+  "devDependencies": {
+    "parcel": "^2.14.4",
+    "sass": "^1.86.3"
+  }
+}
