@@ -4,7 +4,7 @@
   "description": "FlexCRM este un sistem flexibil de gestionare a afacerilor, creat pentru companii mici și mijlocii. Alege șabloane personalizate pentru afaceri cu produse sau servicii, gestionează angajații, clienții și accesează statistici esențiale dintr-un singur loc.FlexCRM este un sistem flexibil de gestionare a afacerilor, creat pentru companii mici și mijlocii. Alege șabloane personalizate pentru afaceri cu produse sau servicii, gestionează angajații, clienții și accesează statistici esențiale dintr-un singur loc.",
   "main": "index.html",
   "scripts": {
-    "sass:watch": "sass --style=expanded --watch styles:dist",
+    "dev": "concurrently \"npm start --prefix backend\" \"npm start --prefix frontend\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,7 +18,11 @@
   },
   "homepage": "https://github.com/olezhka0809/FlexCRM#readme",
   "devDependencies": {
+    "concurrently": "^9.1.2",
     "parcel": "^2.14.4",
     "sass": "^1.86.3"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
   }
 }
