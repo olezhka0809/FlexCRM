@@ -1,0 +1,209 @@
+@use './styles/variables.scss' as *;
+
+*{
+    box-sizing: border-box;
+}
+
+p, h4,h1,h2 ,h3 , button{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: $bg-color;
+}
+
+/* Header block */
+.header {
+    width: 100%;
+    height: 70px;
+    background: $white-color;
+    display: flex;
+    align-items: center;
+    
+    &__container {
+        width: 100%;
+    }
+    
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+        gap: 20px;
+        
+    }
+    
+    /* Logo section */
+    &__logo-block {
+        width: 12%; /* equivalent to col-sm-2 */
+    }
+    
+    &__logo-link {
+        display: flex;
+        align-items: center;
+        color: $black-color;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 24px;
+    }
+    
+    &__logo-img {
+        width: 45px;
+    }
+    
+    &__logo-text {
+        font-size: 24px;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: $headingColor;
+    }
+    
+    /* Menu and search section */
+    &__menu-block {
+        width: 25%; /* equivalent to col-sm-3 */
+        display: flex;
+        justify-content: flex-start;
+        gap: 18px;
+        padding-left: 1.5rem;
+    }
+    
+    &__menu-button {
+        margin: 0;
+        min-width: 40px !important;
+        width: 40px !important;
+        height: 40px !important;
+        background: $light-blue !important;
+        color: $dark-gray !important;
+
+        font-size: 18px !important;
+        border-radius: 50% !important;
+
+    }
+    
+    &__menu-button:hover{
+        background: $buttonHover !important;
+        svg{
+            color: $activeColor;
+            font-size: 18px !important;
+            transition: all 0 2s ease-in-out;
+        }
+        
+    }
+
+
+    /* Search box styling */
+    .searchBox {
+        width: 400px;
+        height: 40px;
+        border-radius: 6px;
+        background: $light-blue;
+        padding: 3px 15px;
+
+        input {
+            height: 100%;
+            width: 100%;
+            padding: 0 12px;
+            background: transparent;
+            border: 0;
+            outline: none;
+            font-size: 15px;
+            color: $dark-gray;
+            padding: 0 12px;
+        }
+
+        input::-webkit-input-placeholder {
+            color: rgba(0, 0, 0, 0.6);
+        }
+
+        svg {
+            font-size: 18px;
+            color: $dark-gray;
+            cursor: pointer;
+        }
+    }
+
+    /* Right section - actions and user profile */
+    &__right {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 0 18px;
+    }
+
+    /* Action buttons section */
+    &__actions {
+        display: flex;
+        gap: 18px;
+    }
+
+    /* User profile section */
+    &__right__myacc {
+        display: flex;
+        align-items: center;
+        text-align: left;
+        color: $black-color;
+        text-transform: capitalize;
+        
+        &-content {
+            margin-right: 12px;
+        }
+        
+        &-image {
+        
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden; 
+            background: $light-blue;
+            color: $dark-gray;
+            font-size: 18px;
+            border-radius: 50%;
+            padding: 2px;
+            border: 3px solid $activeColor;
+            cursor: pointer;
+            img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%; 
+            }
+        }
+        
+        &-info {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: center;
+            box-sizing: border-box;
+            outline: 0;
+            gap: 4px;
+
+            h4 {
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 1.2;
+                text-transform: capitalize;
+                color: $headingColor;
+            }
+            
+            p {
+                font-size: 11px;
+                color: $black-color;
+                opacity: 0.7;
+            }
+        }
+    }
+}
+
+#account-menu li{
+    font-size: 14px !important;
+    padding: 12px 15px !important;
+
+    svg{
+        font-size: 20px !important;
+    }
+}
