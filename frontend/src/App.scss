@@ -9,6 +9,34 @@ p, h4,h1,h2 ,h3 , button{
     padding: 0;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    color: var(--headingColor);
+    margin: 0px;
+    padding: 0px;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    color: var(--bs-heading-color);
+    font-weight: 500;
+    line-height: 1.2;
+    margin-top: 0px;
+}
+
+ol, ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
+}
+
 body{
     background: $bg-color;
 }
@@ -196,6 +224,13 @@ body{
                 opacity: 0.7;
             }
         }
+
+    }
+
+    &_menu_content{
+        margin-bottom: 0px;
+        border-bottom: 1px solid $lightBorder;
+        padding: 5px 8px 8px;
     }
 }
 
@@ -206,4 +241,197 @@ body{
     svg{
         font-size: 20px !important;
     }
+}
+
+$primaryHEX: #5065f6;
+$activeBG: #f0f0f0;
+$lightBorder: #e0e0e0;
+$headingColor: #222;
+$textColor: #555;
+$white-color: #fff;
+$btnBoxShadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+$bs-link-color-rgb: #0d6efd;
+$bs-heading-color: #212529;
+
+/* Dropdown Container */
+.mc-header-dropdown-group {
+  border-radius: 8px;
+  background-color: $white-color;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+  
+  // Notification List
+  .mc-header-dropdown-list {
+    height: 300px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+    &.thin-scrolling {
+      overflow-y: auto;
+      transition: 0.3s linear;
+      scrollbar-width: thin;
+    }
+  }
+  
+  // View All Button
+  .mc-header-dropdown-button {
+    font-size: 11px;
+    text-align: center;
+    width: 100%;
+    padding: 8px 10px;
+    margin-top: 5px;
+    border-radius: 0 0 8px 8px;
+  }
+}
+
+/* Notification Items */
+.mc-header-dropdown-item {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid $lightBorder;
+  border-radius: 8px;
+  gap: 8px;
+  margin: 2px 0px;
+  padding: 10px;
+  transition: 0.3s linear;
+  
+  &.active {
+    background-color: $activeBG;
+    
+    .mc-header-dropdown-meta {
+      h4 {
+        span {
+          font-weight: 500;
+          
+          b {
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+  
+  // Content Container
+  .mc-header-dropdown-content {
+    display: flex;
+    width: 100%;
+    gap: 12px;
+    text-decoration: none;
+    color: $textColor;
+  }
+  
+  // Media Section
+  .mc-header-dropdown-notify-media {
+    position: relative;
+    
+    img {
+      width: 40px;
+      border-radius: 50%;
+      vertical-align: middle;
+    }
+    
+    i {
+      position: absolute;
+      bottom: 0;
+      left: -5px;
+      font-size: 16px;
+      background-color: $white-color;
+      border-radius: 50%;
+      padding: 2px;
+      
+      &.red { color: #f44336; }
+      &.green { color: #4caf50; }
+      &.blue { color: #2196f3; }
+    }
+  }
+  
+  // Meta Content
+  .mc-header-dropdown-meta {
+    flex-grow: 1;
+    width: 140px;
+    overflow: hidden;
+    
+    h4 {
+      align-items: center;
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 3px;
+      font-size: 14px;
+      color: $headingColor;
+      
+      span {
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 18px;
+        
+        b {
+          font-size: 13px;
+          font-weight: 600;
+          text-transform: capitalize;
+        }
+      }
+    }
+    
+    p {
+      font-size: 11px;
+      color: #888;
+      margin: 0;
+    }
+  }
+  
+  // Dropdown Toggle Button
+  .mc-dropdown {
+    .mc-dropdown-toggle {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      border-radius: 50%;
+      
+      &:hover {
+        background-color: rgba(0,0,0,0.05);
+      }
+      
+      i {
+        font-size: 18px;
+        color: #777;
+      }
+    }
+  }
+}
+
+/* Button Styles */
+.mc-btn {
+  box-shadow: $btnBoxShadow;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 8px;
+  padding: 14px 22px;
+  transition: 0.3s linear;
+  white-space: nowrap;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  
+  &.primary {
+    background-color: $primaryHEX;
+    color: $white-color;
+  }
+  
+  &:hover {
+    opacity: 0.9;
+    color: $white-color;
+  }
+}
+
+/* Responsive */
+@media (min-width: 1200px) {
+  .mc-header-dropdown-meta h4 {
+    font-size: 14px;
+  }
 }
