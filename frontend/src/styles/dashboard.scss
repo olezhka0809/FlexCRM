@@ -65,11 +65,14 @@
 .dashboardBoxWrapperRow .box {
     width: 100%;
     height: 100%;
-    min-height: 360px;
+    min-height: 80px;
     background: white;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    padding: 20px;
+    overflow: hidden;
+    padding: 0px;
+    transition: all 0.3s ease;
+    //padding: 20px;
 }
 
 .dashboardBoxWrapper .dashboardBox {
@@ -110,7 +113,7 @@
         position: absolute;
         font-size: 120px;
         top: 80%;
-        left: 5%;
+        left: 10%;
         transform: translateY(-50%);
         opacity: 0.05; // transparent, doar decorativ
         z-index: 0;
@@ -131,13 +134,11 @@
 }
   
 .card__bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     &__wrapper {
         display: flex;
         align-items: center;
-        gap: 8px; // spațiu între button și span
+        justify-content: space-between;
+
         &__mark{
             width: auto;
             font-size: 12px;
@@ -151,24 +152,39 @@
             min-height: 26px; // păstrează înălțimea minimă fără a o bloca
             white-space: nowrap; // ca să nu se rupă pe mai multe linii
         }
+
+        &__info{
+            font-size: 14px;
+            text-transform: capitalize;
+        }
+
+        &--left{
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: row;
+            gap: 5px;
+
+        }
+
+        &--right{
+
+            &--icon{
+                margin-left: auto; 
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+                letter-spacing: normal;
+                color: $white-color;
+                cursor: pointer;
+            }
+        }
     }
 
-    &__icon {
-        margin-left: auto; // îl împinge la capătul din dreapta
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 24px;
-        letter-spacing: normal;
-        color: $white-color;
-      }
 }
  
-.card__bottom__wrapper__info{
-    font-size: 14px;
-    text-transform: capitalize;
-}
+
   
-  
+
   
   

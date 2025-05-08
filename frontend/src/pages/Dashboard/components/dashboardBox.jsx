@@ -31,22 +31,26 @@ const DashboardBox = (props) => {
         </div>
         <div className="card__bottom text-container">
           <div className="card__bottom__wrapper">
-            <span className="card__bottom__wrapper__mark" style={{background: props.statsColor || "#187D44  "}}>{props.stats || "+ 95%"}</span>
-            <span className="card__bottom__wrapper__info text-white"
-            >{props.time || "Last Month"}</span>
+
+            <div className="card__bottom__wrapper--left">
+              <span className="card__bottom__wrapper__mark" style={{background: props.statsColor || "#187D44  "}}>{props.stats || "+ 95%"}</span>
+              <span className="card__bottom__wrapper__info text-white"
+              >{props.time || "Last Month"}</span>
+
+            </div>
+            <div className="card__bottom__wrapper--right">
+              {props.icon_more && (
+                <div className="card__bottom__wrapper--right--icon">
+                  {props.icon_more}
+                </div>
+              )}
+
+            </div>
+
+
           </div>
           
-          {props.icon_more && (
-            <div className="card__bottom__icon">
-              {props.icon_more}
-            </div>
-          )}
-      </div>
-
-
-        
-
-        
+        </div>
       </div>
     </div>
   );

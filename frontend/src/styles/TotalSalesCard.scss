@@ -1,0 +1,138 @@
+@use '../styles/variables' as *; 
+
+.sales{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    }
+
+    &__head__first{
+        margin-bottom: 18px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        h4{
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        &--icon{
+            color: $white-color;
+            cursor: pointer;
+        }
+
+    }
+
+    &__head__second{
+        margin-bottom: 6px;
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items:center;
+        gap: 6px;
+
+        &--trend{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;  
+            align-items: flex-end; 
+            gap: 2px;
+            
+        }
+
+        &--stats{
+            font-size: 16px;
+            font-weight: 600;
+
+        } 
+    }
+
+    &__head__third{
+        &--values{
+            color: $argintiu;
+            font-weight: 400;
+            font-size: 13px;
+        }
+    }
+
+    &__info{
+        font-weight: 700;
+        line-height: 45px;
+        font-size: 28px ;
+        position: relative;
+        z-index: 2;
+    }
+    
+    // Stiluri pentru partea de chart/grafic
+    &__bottom {
+        margin-top: auto;
+        padding-top: 15px;
+        
+        &__wrapper {
+            width: 100%;
+            height: 140px;
+            overflow: hidden;
+        }
+    }
+}
+
+.sales-box-content{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+// Stiluri personalizate pentru grafic
+.recharts-wrapper {
+    margin: 0 auto;
+}
+
+.recharts-surface {
+    overflow: visible;
+}
+
+.recharts-layer.recharts-area-dots {
+    display: none;
+}
+
+.recharts-cartesian-axis-tick-value {
+    font-size: 11px;
+    fill: rgba(255, 255, 255, 0.7);
+}
+
+// Stiluri pentru tooltip
+.custom-tooltip {
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 6px;
+    padding: 8px 12px;
+    color: #fff;
+    font-size: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    .label {
+        margin: 0;
+        font-weight: 500;
+    }
+}
+
+// Animație pentru hover pe punctele din grafic
+.recharts-area-curve:hover {
+    cursor: pointer;
+}
+
+.recharts-tooltip-cursor {
+    fill: rgba(255, 255, 255, 0.1);
+}
