@@ -5,6 +5,8 @@ import Dashboard from './pages/Dashboard';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import LoginPage from './pages/Login_page';
+import RegisterPage from './pages/Register_page';
+import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import './App.scss';
 import './styles/variables.scss';
 
@@ -15,6 +17,7 @@ function App() {
   const [isLogin, setIsLogin] = useState(false);
   const [isHideSidebarAndHeader, setIsHideSidebarAndHeader] = useState(false);
   const [isToogleSidebar, setIsToogleSidebar] = useState(true);
+
 
   const values = {
     isLogin,
@@ -45,6 +48,8 @@ function App() {
               <Route path="/" exact={true} element={<Dashboard />} />
               <Route path="/Dashboard" exact={true} element={<Dashboard />} />
               <Route path="/LoginPage" exact={true} element={<LoginPage />} />
+              <Route path="/RegisterPage" exact={true} element={<RegisterPage />} />
+              <Route path="/ForgotPasswordPage" exact={true} element={<ForgotPasswordPage />} />
             </Routes> 
           </div>
         </div>

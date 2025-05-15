@@ -47,12 +47,20 @@ const LoginPage = ({ onLogin }) => {
 
     if (email === 'admin@example.com' && password === 'password' && userType === 'Admin') {
       onLogin();               
-      navigate('/dashboard');  
+      navigate('/DashboardPage');  
     } else {
       setError('Invalid email, password or user type');
     }
   };
 
+  const handleRegister = () => {
+    navigate('/RegisterPage');
+  };
+  
+  const handleForgotPasswordPage = () => {
+    navigate('/ForgotPasswordPage');
+  };
+  
   const handleGoogleLogin = () => {
     // To be implemented
     console.log('Google login clicked');
@@ -174,7 +182,7 @@ const LoginPage = ({ onLogin }) => {
                     variant="body2" 
                     color="primary" 
                     className="login-link"
-                    onClick={() => console.log('Forgot password clicked')}
+                    onClick={handleForgotPasswordPage}
                   >
                     Forgot Password?
                   </Typography>
@@ -219,7 +227,7 @@ const LoginPage = ({ onLogin }) => {
                     variant="body2"
                     color="primary"
                     className="login-link login-link-bold"
-                    onClick={() => console.log('Register clicked')}
+                    onClick={handleRegister}
                   >
                     Register
                   </Typography>

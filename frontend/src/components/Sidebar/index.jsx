@@ -14,6 +14,7 @@ import { IoMdLogOut } from "react-icons/io";
 
 
 
+
 const Sidebar = () => {
     const [activeTab, setActiveTab] = useState(0);
     const navigate = useNavigate(); // Folosim hook-ul de navigare din React Router
@@ -28,14 +29,13 @@ const Sidebar = () => {
 
     // Funcția de logout
     const handleLogout = () => {
-        // Aici putem adăuga operațiuni de logout cum ar fi:
-        // 1. Ștergerea token-ului de autentificare
+        
         localStorage.removeItem('authToken');
         // 2. Resetarea stării globale dacă este cazul
         // dispatch({ type: 'LOGOUT' });
         
         // 3. Redirecționare către pagina de login
-        navigate('../../pages/LoginPage/index.jsx');
+        navigate('/LoginPage'); 
         
         // Alternativ, dacă nu folosești React Router, poți folosi:
         // window.location.href = '/login';
