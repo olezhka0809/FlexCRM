@@ -7,22 +7,38 @@ import MessageIcon from '@mui/icons-material/Message';
 import { FaBell } from "react-icons/fa";
 import { MdSettings } from "react-icons/md";
 import { IoMdLock } from "react-icons/io";
-import { Link } from '@mui/material';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { IoMdLogOut } from "react-icons/io";
 
 
+
+
 const Sidebar = () => {
     const [activeTab, setActiveTab] = useState(0);
-
+    const navigate = useNavigate(); // Folosim hook-ul de navigare din React Router
     
     const isOpenSubMenu = (index) => {
         if (activeTab === index) {
             setActiveTab(0);
         } else {
-            
             setActiveTab(index);
         }
+    }
+
+    // Funcția de logout
+    const handleLogout = () => {
+        // Aici putem adăuga operațiuni de logout cum ar fi:
+        // 1. Ștergerea token-ului de autentificare
+        localStorage.removeItem('authToken');
+        // 2. Resetarea stării globale dacă este cazul
+        // dispatch({ type: 'LOGOUT' });
+        
+        // 3. Redirecționare către pagina de login
+        navigate('../../pages/LoginPage/index.jsx');
+        
+        // Alternativ, dacă nu folosești React Router, poți folosi:
+        // window.location.href = '/login';
     }
 
     return (
@@ -152,7 +168,9 @@ const Sidebar = () => {
 
                 <div className="logoutWrapper">
                     <div className="logoutBox">
-                        <Button variant="contained"><IoMdLogOut/> Logout</Button>
+                        <Button variant="contained" onClick={handleLogout}>
+                            <IoMdLogOut/> Logout
+                        </Button>
                     </div>
                 </div>
             </div>

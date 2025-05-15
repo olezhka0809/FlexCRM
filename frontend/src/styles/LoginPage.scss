@@ -1,0 +1,181 @@
+@use './variables' as *;
+@use "sass:color";
+
+
+.loginPage {
+  width: 100%;
+  height: 100vh; 
+  padding: 35px 25px;
+  position: relative;
+}
+
+.login {
+  &__patern {
+    width: 100%;
+    height: 100%;
+    background: $white-color;
+    opacity: 0.6; 
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+    pointer-events: none;
+  }
+  
+  &__head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    
+    &-logo {
+      width: 220px;
+      height: auto;
+      margin-bottom: 10px;
+      filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.2));
+    }
+
+    &-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 25px;
+      margin-left: 15px;
+    }
+  }
+  
+  // Container and paper styles
+  &-container {
+    z-index: 1;
+    position: relative;
+  }
+  
+  &-paper {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  // Form elements
+  &-form {
+    margin-top: 1rem;
+    width: 100%;
+  }
+  
+  &-field {
+    margin-bottom: 0.5rem;
+  }
+  
+  &-error {
+    margin-bottom: 1rem;
+    width: 100%;
+    text-align: center;
+  }
+  
+  &-button {
+    margin-top: 1.5rem !important;
+    margin-bottom: 1rem !important;
+    height: 42px;
+
+  }
+  
+  // Forgot password link
+  &-forgot {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  // Divider section
+  &-divider {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    
+    &-line {
+      flex-grow: 1;
+      background-color: $black-color;
+    }
+    
+    &-text {
+      margin: 0 1rem;
+      border: 2px solid $light-color;
+      padding: 0.5rem ;
+      border-radius: 50%;
+    }
+  }
+  
+  // Social login buttons
+  &-social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+    
+    &-button {
+      width: 100%;
+      height: 42px;
+    }
+    
+    &-google {
+        background: $google-color !important;
+        color: $white-color !important;
+        
+        &:hover {
+            background: color.adjust($google-color, $lightness: -5%) !important;
+
+        }
+    }
+    &-facebook {
+        background: $facebook-color !important;
+        color: $white-color !important;
+        &:hover {
+            background: color.adjust($facebook-color, $lightness: -5%) !important;
+
+        }
+    }
+    
+  }
+  
+  // Links styling
+  &-link {
+    cursor: pointer;
+    text-decoration: underline;
+    
+    &-bold {
+      font-weight: bold;
+    }
+  }
+  
+  &__footer{
+    margin-top: 1rem;
+    margin-bottom: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background:$white-color;
+    border-radius: 4px;
+    padding: 2rem;
+    align-items: center;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  // Register section
+  &-register {
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  // Help text section
+  &-help {
+    margin-top: 1rem;
+    text-align: center;
+    
+  }
+}
+

@@ -138,6 +138,16 @@
         color: $black-color;
         text-transform: capitalize;
         
+        &-btn{
+          background: $primaryHEX !important;
+          font-size: 14px !important;
+          font-weight: 600 !important;
+          color: $white-color !important;
+          text-transform: capitalize !important;
+          border-radius: 5px !important;
+          padding: 10px 35px !important;
+        }
+        
         &-content {
             margin-right: 12px;
         }
@@ -392,6 +402,12 @@ $bs-heading-color: #212529;
     opacity: 0.9;
     color: $white-color;
   }
+}
+
+.full{
+  max-width: 100% !important;
+  flex: 0 0 100% !important; 
+  width: 100% !important;
 }
 
 /* Responsive */

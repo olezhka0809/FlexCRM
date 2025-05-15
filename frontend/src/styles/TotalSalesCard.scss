@@ -74,7 +74,7 @@
         z-index: 2;
     }
     
-    // Stiluri pentru partea de chart/grafic
+    
     &__bottom {
         margin-top: auto;
         padding-top: 15px;
@@ -94,7 +94,7 @@
     height: 100%;
 }
 
-// Stiluri personalizate pentru grafic
+
 .recharts-wrapper {
     margin: 0 auto;
 }
@@ -112,7 +112,7 @@
     fill: rgba(255, 255, 255, 0.7);
 }
 
-// Stiluri pentru tooltip
+
 .custom-tooltip {
     background-color: rgba(0, 0, 0, 0.75);
     border-radius: 6px;
@@ -128,7 +128,7 @@
     }
 }
 
-// Animație pentru hover pe punctele din grafic
+
 .recharts-area-curve:hover {
     cursor: pointer;
 }

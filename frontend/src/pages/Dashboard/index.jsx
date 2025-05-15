@@ -6,6 +6,7 @@ import { TfiMoreAlt } from "react-icons/tfi";
 
 
 import DashboardBox from "./components/dashboardBox";
+import BestSellingProducts from "./components/BestSellingProducts";
 import "../../styles/dashboard.scss";
 import TotalSalesCard from "./components/TotalSalesChart";
 
@@ -96,6 +97,22 @@ const Dashboard = () => {
                 stats="45%"
                 statsColor="#89ECB3"
                 trendingIcon={<IoMdTrendingUp/>}
+              />
+          </div>
+          <div className="BestSellingProducts">
+              <BestSellingProducts
+                color={[colors.blue_sales1 , colors.blue_sales2]} 
+                icon={<TfiMoreAlt/>}
+                iconColor="#000"
+                title="Total Sales" 
+                value="$3,787,681.00"
+                value_time="$3,578.90"
+                time="last month"
+                icon_more={<RiMore2Fill/>}
+                stats="45%"
+                statsColor="#89ECB3"
+                trendingIcon={<IoMdTrendingUp/>}
+              
               />
           </div>
         </div>
