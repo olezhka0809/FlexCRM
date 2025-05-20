@@ -1,0 +1,190 @@
+@use '../styles/variables' as *; 
+
+.main .content {
+    width: 80%;
+    flex: 0 0 80%;
+}
+
+.right-content {
+    padding: 90px 30px;
+}
+
+.dashboardBoxWrapper {
+    gap: 20px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.dashboardBoxWrapper .dashboardBox {
+    display: flex;
+    justify-content: space-between;
+    width: 48%;
+    height: 170px;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    }
+}
+
+.dashboardBoxWrapper .dashboardBox .text-container h4 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+
+
+.dashboardBoxWrapper .dashboardBox .text-container .card__time {
+    font-size: 14px;
+    text-transform: capitalize
+}
+
+.dashboardBoxWrapper .dashboardBox .dashboard-box-content .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    border-radius: 10px;
+    background-image: linear-gradient(to bottom right, rgba(255,255,255,0.1), rgba(255,255,255,0.2));
+}
+
+.dashboardBoxWrapper .dashboardBox .icon svg {
+    font-size: 30px;
+    color: white;
+    opacity: 0.7;
+}
+
+
+.dashboardBoxWrapperRow .box {
+    width: 100%;
+    height: 100%;
+    min-height: 80px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+    padding: 0px;
+    transition: all 0.3s ease;
+    //padding: 20px;
+}
+
+.dashboardBoxWrapper .dashboardBox {
+    padding: 0; // sau elimină complet paddingul de aici
+  }
+  
+.dashboard-box-content {
+    width: 100%;
+    height: 100%;
+    padding: 20px; // padding aplicat doar conținutului
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; // pentru a împinge head sus și bottom jos
+}
+
+.card__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card__info{
+    font-weight: 700;
+    line-height: 45px;
+    font-size: 35px ;
+    position: relative;
+    z-index: 2;
+}
+  
+.card__head__right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; // ca titlul și valoarea să fie aliniate la dreapta
+    position: relative;
+    z-index: 1;
+    padding-left: 10px; // sau cât ai nevoie
+    .trending-icon {
+        position: absolute;
+        font-size: 120px;
+        top: 80%;
+        left: 10%;
+        transform: translateY(-50%);
+        opacity: 0.05; // transparent, doar decorativ
+        z-index: 0;
+      }
+    
+}
+  
+.icon {
+    order: 1; // mută iconul primul în flux
+    margin-left: auto; // îl trimite complet în stânga
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    border-radius: 10px;
+    background-image: linear-gradient(to bottom right, rgba(255,255,255,0.1), rgba(255,255,255,0.2));
+}
+  
+.card__bottom {
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &__mark{
+            width: auto;
+            font-size: 12px;
+            font-weight: 500;
+            border-radius: 4px;
+            padding: 4px 6px;
+            color: $white-color;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 26px; // păstrează înălțimea minimă fără a o bloca
+            white-space: nowrap; // ca să nu se rupă pe mai multe linii
+        }
+
+        &__info{
+            font-size: 14px;
+            text-transform: capitalize;
+        }
+
+        &--left{
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: row;
+            gap: 5px;
+
+        }
+
+        &--right{
+
+            &--icon{
+                margin-left: auto; 
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+                letter-spacing: normal;
+                color: $white-color;
+                cursor: pointer;
+            }
+        }
+    }
+
+}
+ 
+
+  
+
+  
+  
