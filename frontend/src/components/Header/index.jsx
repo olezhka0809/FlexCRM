@@ -30,14 +30,11 @@ import PERSON5 from '../../assets/images/Person5.webp';
 // Import components
 import SearchBox from "../SearchBox";
 
-
-
 const Header = () => {
     const [anchorEl, setAnchorEl] = useState(null);
     const [notificationAnchorEl, setNotificationAnchorEl] = useState(null);
     const openMyAcc = Boolean(anchorEl);
     const openMyNotification = Boolean(notificationAnchorEl);
-    const [isLogin] = useState(false);
     
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -55,7 +52,7 @@ const Header = () => {
         setNotificationAnchorEl(null);
     };
 
-    // Notification data
+    // Notification data - am adăugat mai multe notificări pentru a demonstra scroll-ul
     const notifications = [
         {
             id: 1,
@@ -187,7 +184,7 @@ const Header = () => {
                                             filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
                                             mt: 1.5,
                                             maxWidth: '350px',
-                                            maxHeight: '85vh',
+                                            maxHeight: '85vh', // Adăugat pentru a limita înălțimea totală
                                             '& .MuiAvatar-root': {
                                                 width: 32,
                                                 height: 32,
@@ -228,7 +225,7 @@ const Header = () => {
                                     maxHeight: '200px', 
                                     overflowY: 'auto',
                                     overflowX: 'hidden',
-                                    scrollbarWidth: 'thin',
+                                    scrollbarWidth: 'thin', // Pentru Firefox
                                 }}>
                                     {notifications.map(notification => (
                                         <MenuItem key={notification.id} onClick={handleCloseNotificationDrop}>
@@ -298,90 +295,84 @@ const Header = () => {
                                 </div>
                             </Menu>
                         </div>
+                        
                         {/* User Profile */}
+                        <div className="header__right__myacc-wrapper">
+                            <Button className="header__right__myacc d-flex align-items-center"
+                            onClick={handleClick}
+                            aria-controls={openMyAcc ? 'account-menu' : undefined}
+                            aria-haspopup="true"
+                            aria-expanded={openMyAcc ? 'true' : undefined}>
+                                <div className="header__right__myacc-content">
+                                    <span className="header__right__myacc-image">
+                                        <img src={PERSON_SAMPLE} alt="User avatar" />
+                                    </span>
+                                </div>
+                                <div className="header__right__myacc-info">
+                                    <h4>Michael Thompson</h4>
+                                    <p>michael.thompson@gmail.com</p>
+                                </div>
+                            </Button>
 
-                        {
-                            isLogin !== true ? 
-                            <Link to="/LoginPage" className="header__right__myacc-wrapper" >
-                                <Button className='header__right__myacc-btn '>Sign In</Button>
-                            </Link>        
-                            :
-                            <div className="header__right__myacc-wrapper">
-                                <Button className="header__right__myacc d-flex align-items-center"
-                                onClick={handleClick}
-                                aria-controls={openMyAcc ? 'account-menu' : undefined}
-                                aria-haspopup="true"
-                                aria-expanded={openMyAcc ? 'true' : undefined}>
-                                    <div className="header__right__myacc-content">
-                                        <span className="header__right__myacc-image">
-                                            <img src={PERSON_SAMPLE} alt="User avatar" />
-                                        </span>
-                                    </div>
-                                    <div className="header__right__myacc-info">
-                                        <h4>Michael Thompson</h4>
-                                        <p>michael.thompson@gmail.com</p>
-                                    </div>
-                                </Button>
-
-                                <Menu
-                                    id="account-menu"
-                                    anchorEl={anchorEl}
-                                    open={openMyAcc}
-                                    onClose={handleClose}
-                                    onClick={handleClose}
-                                    slotProps={{
-                                        paper: {
-                                            elevation: 0,
-                                            sx: {
-                                                overflow: 'visible',
-                                                filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
-                                                mt: 1.5,
-                                                '& .MuiAvatar-root': {
-                                                    width: 32,
-                                                    height: 32,
-                                                    ml: -0.5,
-                                                    mr: 1,
-                                                },
-                                                '&::before': {
-                                                    content: '""',
-                                                    display: 'block',
-                                                    position: 'absolute',
-                                                    top: 0,
-                                                    right: 14,
-                                                    width: 10,
-                                                    height: 10,
-                                                    bgcolor: 'background.paper',
-                                                    transform: 'translateY(-50%) rotate(45deg)',
-                                                    zIndex: 0,
-                                                },
+                            {/* Account Menu */}
+                            <Menu
+                                id="account-menu"
+                                anchorEl={anchorEl}
+                                open={openMyAcc}
+                                onClose={handleClose}
+                                onClick={handleClose}
+                                slotProps={{
+                                    paper: {
+                                        elevation: 0,
+                                        sx: {
+                                            overflow: 'visible',
+                                            filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
+                                            mt: 1.5,
+                                            '& .MuiAvatar-root': {
+                                                width: 32,
+                                                height: 32,
+                                                ml: -0.5,
+                                                mr: 1,
+                                            },
+                                            '&::before': {
+                                                content: '""',
+                                                display: 'block',
+                                                position: 'absolute',
+                                                top: 0,
+                                                right: 14,
+                                                width: 10,
+                                                height: 10,
+                                                bgcolor: 'background.paper',
+                                                transform: 'translateY(-50%) rotate(45deg)',
+                                                zIndex: 0,
                                             },
                                         },
-                                    }}
-                                    transformOrigin={{ horizontal: 'right', vertical: 'top' }}
-                                    anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
-                                >
-                                    <Divider />
-                                    <MenuItem onClick={handleClose}>
-                                        <ListItemIcon>
-                                            <PersonAdd fontSize="small" />
-                                        </ListItemIcon>
-                                        My Account
-                                    </MenuItem>
-                                    <MenuItem onClick={handleClose}>
-                                        <ListItemIcon>
-                                            <IoShieldHalfSharp />
-                                        </ListItemIcon>
-                                        Reset Password
-                                    </MenuItem>
-                                    <MenuItem onClick={handleClose}>
-                                        <ListItemIcon>
-                                            <Logout fontSize="small" />
-                                        </ListItemIcon>
-                                        Logout
-                                    </MenuItem>
-                                </Menu>
-                            </div>
-                        }   
+                                    },
+                                }}
+                                transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+                                anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+                            >
+                                <Divider />
+                                <MenuItem onClick={handleClose}>
+                                    <ListItemIcon>
+                                        <PersonAdd fontSize="small" />
+                                    </ListItemIcon>
+                                    My Account
+                                </MenuItem>
+                                <MenuItem onClick={handleClose}>
+                                    <ListItemIcon>
+                                        <IoShieldHalfSharp />
+                                    </ListItemIcon>
+                                    Reset Password
+                                </MenuItem>
+                                <MenuItem onClick={handleClose}>
+                                    <ListItemIcon>
+                                        <Logout fontSize="small" />
+                                    </ListItemIcon>
+                                    Logout
+                                </MenuItem>
+                            </Menu>
+                        </div>
                     </div>
                 </div>
             </div>
